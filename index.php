@@ -8,7 +8,8 @@ require_once('vendor/autoload.php');
 $pet = Base::instance();
 
 $pet->route('GET /', function () {
-    echo 'Pet Home';
+    $view = new Template();
+    echo $view->render('views/home.html');
 });
 
 $pet->run();
